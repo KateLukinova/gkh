@@ -134,7 +134,7 @@ export default {
       text-transform: uppercase;
       color: #FFFFFF;
       padding: 4px 8px;
-      background: #FFCA00;
+      background: #A3A3A3;
       border-radius: 2px;
     }
     nav {

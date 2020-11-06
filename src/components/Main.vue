@@ -2,6 +2,7 @@
   <div>
     <MHeader></MHeader>
     <MapMain></MapMain>
+    <MainTabs></MainTabs>
   </div>
 </template>
 
@@ -9,13 +10,15 @@
   import MHeader from '~/components/MHeader.vue';
   import MFooter from '~/components/MFooter.vue';
   import MapMain from '~/components/MapMain.vue';
+  import MainTabs from '~/components/MainTabs.vue';
 
   export default {
 
     components: {
       MHeader,
       MFooter,
-      MapMain
+      MapMain,
+      MainTabs
     },
 
     data() {
