@@ -77,6 +77,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  @import "../assets/scss/utils/vars";
+
   .map-main-wrapper {
     width: 100%;
     height: 640px;
@@ -87,13 +90,19 @@ export default {
   }
 
   .map-content {
-    margin-top: 100px;
     padding: 60px;
+    padding-top: 160px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+
+    @media #{$mmedia-sm} {
+      padding: 15px;
+      padding-top: 120px;
+      flex-direction: column;
+    }
   }
 
   .map-column-left {
@@ -103,6 +112,10 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+
+    @media #{$mmedia-sm} {
+      justify-content: flex-start;
+    }
   }
 
   .map-button-box {
@@ -125,6 +138,11 @@ export default {
       line-height: 1.4;
       color: #FFFFFF;
       margin-top: 8px;
+
+      @media #{$mmedia-sm} {
+        font-size: 12px;
+        padding: 5px;
+      }
 
       svg {
         margin-right: 8px;
@@ -188,6 +206,10 @@ export default {
       color: #77C216;
       height: auto;
       position: relative;
+
+      @media #{$mmedia-sm} {
+        margin-right: 28px;
+      }
 
       .plus {
         position: absolute;

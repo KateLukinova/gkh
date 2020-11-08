@@ -3,6 +3,8 @@
     <MHeader></MHeader>
     <MapMain></MapMain>
     <MainTabs></MainTabs>
+    <Quiz></Quiz>
+    <MFooter></MFooter>
   </div>
 </template>
 
@@ -11,6 +13,7 @@
   import MFooter from '~/components/MFooter.vue';
   import MapMain from '~/components/MapMain.vue';
   import MainTabs from '~/components/MainTabs.vue';
+  import Quiz from '~/components/Quiz.vue';
 
   export default {
 
@@ -18,7 +21,8 @@
       MHeader,
       MFooter,
       MapMain,
-      MainTabs
+      MainTabs,
+      Quiz
     },
 
     data() {

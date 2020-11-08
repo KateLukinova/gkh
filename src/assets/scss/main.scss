@@ -11,15 +11,6 @@ html {
   color: $mainFontColor;
   height: 100%;
   width: 100vw;
-  @media screen and (max-width: $desktopWidth) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: $tableWidth) {
-    font-size: 15px;
-  }
-  @media screen and (max-width: $phoneWidth) {
-    font-size: 14px;
-  }
 }
 
 body {
@@ -93,6 +84,9 @@ li {
       background-color: #6FB90F;
     }
   }
+  @media #{$mmedia-lg} {
+    padding: 10px 15px;
+  }
 }
 
 .button-box {
@@ -103,6 +97,34 @@ li {
     margin-right: 16px;
     &:nth-last-child(1) {
       margin-right: 0;
+    }
+  }
+}
+
+.content-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #77C216;
+  border: 1px solid #77C216;
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 9px 12px;
+  margin-top: 16px;
+
+  svg {
+    margin-left: 8px;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    svg {
+      margin-left: 16px;
     }
   }
 }
