@@ -15,10 +15,11 @@ import VueMask from 'v-mask'
 import { VuejsDatatableFactory } from 'vuejs-datatable';
 import VueKinesis from 'vue-kinesis'
 import VueSmoothScroll from 'vue2-smooth-scroll'
-// import VueTabs from 'vue-nav-tabs'
 import Tabs from 'vue-nav-tabs/dist/vue-tabs.js'
-
 import 'vue-nav-tabs/themes/vue-tabs.css'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
 
 Vue.use(VueSmoothScroll, {
   duration: 1000,
@@ -30,6 +31,7 @@ Vue.use(VueMask);
 Vue.use(VueRouter)
 Vue.use(vSelect)
 Vue.use(Tabs)
+Vue.use(VueSlickCarousel)
 
 
 window.EventBus = new Vue();
@@ -41,6 +43,7 @@ const MFooter = Vue.component('MFooter', require('./components/MFooter.vue').def
 const MapMain = Vue.component('MapMain', require('./components/MapMain.vue').default)
 const MainTabs = Vue.component('MainTabs', require('./components/MainTabs.vue').default)
 const Quiz = Vue.component('Quiz', require('./components/Quiz.vue').default)
+const Register = Vue.component('Quiz', require('./components/Register.vue').default)
 const ButtonsComponent = Vue.component('ButtonsComponent', require('./components/ButtonsComponent.vue').default)
 const About = Vue.component('About', require('./components/About.vue').default)
 

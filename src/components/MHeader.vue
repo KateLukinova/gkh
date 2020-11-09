@@ -1,5 +1,6 @@
 <template>
   <div class="header" v-bind:class="{ bgWhite: scrolled }">
+    <register class="register" v-bind:class="{ opened: isRegisterOpened }"></register>
     <a href="#" class="logo-mobile">
       <svg width="138" height="60" viewBox="0 0 138 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0)">
@@ -88,18 +89,24 @@
       </div>
       <div class="button-box">
         <a href="#" class="m-btn transparent">Войти</a>
-        <a href="#" class="m-btn">Регистрация</a>
+        <a href="#" class="m-btn" @click="isRegisterOpened = !isRegisterOpened">Регистрация</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import Register from '~/components/Register.vue';
 
 export default {
+  components: {
+    Register
+  },
+
   data() {
     return {
       isMenuOpened: false,
+      isRegisterOpened: false,
       scrolled: false
     }
   },
@@ -312,13 +319,19 @@ export default {
     }
   }
 
+  .register {
+    transform: translateX(100%);
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: auto;
+    transition: all 0.5s ease;
 
-  @media (max-width: 1366px) {
-
-  }
-
-  @media (max-width: 768px) {
-
+    &.opened {
+      transform: translateX(0);
+    }
   }
 
 </style>
