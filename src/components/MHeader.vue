@@ -1,7 +1,8 @@
 <template>
   <div class="header" v-bind:class="{ bgWhite: scrolled }">
     <register class="register" v-bind:class="{ opened: isRegisterOpened }"></register>
-    <a href="#" class="logo-mobile">
+    <login class="login" v-bind:class="{ opened: isLoginOpened }"></login>
+    <router-link to="/" class="logo-mobile">
       <svg width="138" height="60" viewBox="0 0 138 60" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0)">
           <path d="M49.9998 24.4848C49.7553 12.0909 40.6964 1.9697 28.3071 0.242424C27.192 0.0757576 26.092 0 24.9921 0C23.8922 0 22.7923 0.0757576 21.6924 0.242424C9.31844 1.9697 0.244199 12.0909 -0.000225418 24.4848C-0.0766079 28.7576 1.03858 33 3.08563 36.7576C5.28545 40.803 8.52406 43.6212 11.7627 46.803C11.8085 46.8636 11.8391 46.9394 11.9002 46.9849C16.1623 51.2121 20.4245 55.4242 24.656 59.6667C24.8241 59.8333 24.9921 60.0152 24.9921 60.0152C24.9921 60.0152 25.1602 59.8485 25.3282 59.6667C29.5751 55.4242 33.8372 51.2121 38.0841 46.9849C38.1299 46.9394 38.1758 46.8636 38.2216 46.803C41.4602 43.6212 44.6988 40.803 46.8986 36.7576C48.9457 33 50.0762 28.7576 49.9998 24.4848Z" fill="#77C216"/>
@@ -16,7 +17,7 @@
           </clipPath>
         </defs>
       </svg>
-    </a>
+    </router-link>
     <div class="menu-icon" @click="isMenuOpened = !isMenuOpened">
       <svg width="31" height="20" viewBox="0 0 31 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="31" height="3" rx="1" fill="#2F2F2F"/>
@@ -32,7 +33,7 @@
         </svg>
       </a>
       <div class="header-column">
-        <a href="#" class="logo">
+        <router-link to="/" class="logo">
           <svg width="138" height="60" viewBox="0 0 138 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
               <path d="M49.9998 24.4848C49.7553 12.0909 40.6964 1.9697 28.3071 0.242424C27.192 0.0757576 26.092 0 24.9921 0C23.8922 0 22.7923 0.0757576 21.6924 0.242424C9.31844 1.9697 0.244199 12.0909 -0.000225418 24.4848C-0.0766079 28.7576 1.03858 33 3.08563 36.7576C5.28545 40.803 8.52406 43.6212 11.7627 46.803C11.8085 46.8636 11.8391 46.9394 11.9002 46.9849C16.1623 51.2121 20.4245 55.4242 24.656 59.6667C24.8241 59.8333 24.9921 60.0152 24.9921 60.0152C24.9921 60.0152 25.1602 59.8485 25.3282 59.6667C29.5751 55.4242 33.8372 51.2121 38.0841 46.9849C38.1299 46.9394 38.1758 46.8636 38.2216 46.803C41.4602 43.6212 44.6988 40.803 46.8986 36.7576C48.9457 33 50.0762 28.7576 49.9998 24.4848Z" fill="#77C216"/>
@@ -47,16 +48,16 @@
               </clipPath>
             </defs>
           </svg>
-        </a>
+        </router-link>
         <div class="header-nav">
           <h2>Давайте вместе сделаем наш город красивее и функциональнее</h2>
           <nav>
             <ul>
               <li>
-                <a href="#">
+                <router-link to="/case-card">
                   Карта дел
                   <span class="header-count-business">+29</span>
-                </a>
+                </router-link>
               </li>
               <li>
                 <a href="#">
@@ -88,7 +89,7 @@
         </div>
       </div>
       <div class="button-box">
-        <a href="#" class="m-btn transparent">Войти</a>
+        <a href="#" class="m-btn transparent" @click="isLoginOpened = !isLoginOpened">Войти</a>
         <a href="#" class="m-btn" @click="isRegisterOpened = !isRegisterOpened">Регистрация</a>
       </div>
     </div>
@@ -97,16 +98,19 @@
 
 <script>
   import Register from '~/components/Register.vue';
+  import Login from '~/components/Login.vue';
 
 export default {
   components: {
-    Register
+    Register,
+    Login
   },
 
   data() {
     return {
       isMenuOpened: false,
       isRegisterOpened: false,
+      isLoginOpened: false,
       scrolled: false
     }
   },
@@ -322,7 +326,22 @@ export default {
   .register {
     transform: translateX(100%);
     position: fixed;
-    top: 100px;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: auto;
+    transition: all 0.5s ease;
+
+    &.opened {
+      transform: translateX(0);
+    }
+  }
+
+  .login {
+    transform: translateX(100%);
+    position: fixed;
+    top: 0;
     left: 0;
     z-index: 10000;
     width: 100vw;

@@ -8,20 +8,22 @@
         </svg>
 
       </div>
-      <div class="caption">Регистрация</div>
+      <div class="caption">Вход</div>
 
       <div class="form-group">
-        <label for="reg-form-email">Эл. почта</label>
-        <input type="text" id="reg-form-email" placeholder="...">
+        <label for="login-form-email">Эл. почта</label>
+        <input type="text" id="login-form-email" placeholder="...">
       </div>
 
       <div class="form-group">
-        <label for="reg-password">Придумайте пароль</label>
-        <input type="password" id="reg-password" placeholder="...">
+        <label for="login-password">Придумайте пароль</label>
+        <input type="password" id="login-password" placeholder="...">
       </div>
+
+      <div class="form-hint right">Не помню пароль</div>
 
       <button type="submit" class="submit-button">
-        Зарегистрироваться
+        Войти
         <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4.854 5.78834e-08L4.14697 0.706055L7.29297 3.85254L5.78659e-08 3.85254L4.59411e-08 4.85254L7.29199 4.85254L4.146 7.99805L4.854 8.70508L9.20703 4.35156L4.854 5.78834e-08Z" fill="white"/>
         </svg>
@@ -68,11 +70,9 @@ export default {
 
   @import "../assets/scss/utils/vars";
 
-
-  .register-wrap {
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
+  .form-hint.right {
+    text-align: right;
   }
+
 
 </style>
