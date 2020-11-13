@@ -2,7 +2,7 @@
   <div class="map-main-wrapper">
     <div class="map-content">
       <div class="map-column-left">
-        <img src="../assets/img/city.png" alt="">
+        <img src="../assets/img/city.png" alt="" style="opacity: 0">
         <div class="map-button-box">
           <a href="#" class="map-button">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="check-icon">

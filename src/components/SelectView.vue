@@ -35,6 +35,7 @@
       },
       select(option) {
         this.value = option;
+        this.$emit("selected-view", this.value);
       }
     }
   };
